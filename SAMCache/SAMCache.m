@@ -248,7 +248,7 @@
 	static NSCharacterSet *illegalFileNameCharacters = nil;
 	static dispatch_once_t illegalCharacterCreationToken;
 	dispatch_once(&illegalCharacterCreationToken, ^{
-		illegalFileNameCharacters = [NSCharacterSet characterSetWithCharactersInString: @"\\?%*|\"<>:"];
+		illegalFileNameCharacters = [NSCharacterSet characterSetWithCharactersInString: @"\\?%*|\"<>:/"];
 	});
 
 	return [[fileName componentsSeparatedByCharactersInSet:illegalFileNameCharacters] componentsJoinedByString:@""];
